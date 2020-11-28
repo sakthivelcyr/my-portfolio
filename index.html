@@ -307,17 +307,17 @@
                     <form method="post" autocomplete="off" name="google-sheet">
                         <div class="fields">
                             <div class="field name">
-                                <input id="name" type="text" placeholder="Name" required>
+                                <input id="name" name="name" type="text" placeholder="Name" required>
                             </div>
                             <div class="field email">
-                                <input id="email" type="email" placeholder="Email" required>
+                                <input id="email" name="email" type="email" placeholder="Email" required>
                             </div>
                         </div>
                         <div class="field">
-                            <input id="subject" type="text" placeholder="Subject" required>
+                            <input id="subject" name="subject" type="text" placeholder="Subject" required>
                         </div>
                         <div class="field textarea">
-                            <textarea id="message" cols="30" rows="10" placeholder="Message.." required></textarea>
+                            <textarea id="message" name="message" cols="30" rows="10" placeholder="Message.." required></textarea>
                         </div>
                         <div class="button">
                             <button id="submit" name="submit" type="submit">Send message</button>
@@ -349,13 +349,13 @@
                 })
                 .then(response => {
                     document.getElementById('loading').innerHTML = "Thanks for Contacting us ..! We Will Contact You Soon ...";
-                    document.getElementById('name').innerHTML = "";
-                    document.getElementById('email').innerHTML = "";
-                    document.getElementById('message').innerHTML = "";
-                    document.getElementById('subject').innerHTML = "";
+                    document.getElementById('name').value = "";
+                    document.getElementById('email').value = "";
+                    document.getElementById('message').value = "";
+                    document.getElementById('subject').value = "";
                 }) //alert("Thanks for Contacting us..! We Will Contact You Soon..."))
                 .catch(error => {
-                    document.getElementById('loading').innerHTML = "Some error occured. Try again ... ";
+                    document.getElementById('loading').innerHTML = "Some error occured. Try again ... " + error;
                 })
         })
     </script>
